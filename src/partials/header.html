@@ -1,0 +1,65 @@
+<header class="site-header" data-header>
+  <div class="site-header__bar">
+    <a class="brand" href="index.html" aria-label="Global Academic Leaders, home">
+      <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+        <rect class="brand__mark-bg" width="36" height="36" rx="10"/>
+        <path class="brand__mark-steps" d="M9 26h6v-6h6v-6h6"/>
+        <circle class="brand__mark-sun" cx="27" cy="8.5" r="3.5"/>
+      </svg>
+      <span class="brand__name">Global Academic Leaders</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html"{{current_home}}>Home</a></li>
+        <li class="has-menu{{offer_section}}">
+          <button class="site-nav__link site-nav__trigger" type="button" aria-expanded="false" aria-controls="offer-menu">
+            What I offer
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          </button>
+          <div class="offer-menu" id="offer-menu">
+            <a class="offer-menu__item" href="offer.html"{{current_offer}}>
+              <span class="swatch swatch--all" aria-hidden="true"></span>
+              <span><strong>All services</strong><small>Real results and how it works</small></span>
+            </a>
+            <a class="offer-menu__item" href="sat.html"{{current_sat}}>
+              <span class="swatch swatch--sat" aria-hidden="true"></span>
+              <span><strong>SAT prep</strong><small>Every method behind a 1560</small></span>
+            </a>
+            <a class="offer-menu__item" href="math.html"{{current_math}}>
+              <span class="swatch swatch--math" aria-hidden="true"></span>
+              <span><strong>School math</strong><small>Middle school through AP Calculus</small></span>
+            </a>
+            <a class="offer-menu__item" href="elementary.html"{{current_elementary}}>
+              <span class="swatch swatch--elem" aria-hidden="true"></span>
+              <span><strong>Elementary</strong><small>Strong foundations, grades K to 5</small></span>
+            </a>
+          </div>
+        </li>
+        <li><a class="site-nav__link" href="testimonials.html"{{current_testimonials}}>Testimonials</a></li>
+        <li><a class="site-nav__link" href="contact.html"{{current_contact}}>Contact</a></li>
+      </ul>
+      <div class="site-nav__extra">
+        <!-- if:phone -->
+        <a class="phone-pill" href="tel:{{phone_href}}">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{phone}}
+        </a>
+        <!-- endif:phone -->
+        <a class="btn btn--primary" href="contact.html">Get in touch</a>
+      </div>
+    </nav>
+
+    <div class="site-header__actions">
+      <!-- if:phone -->
+      <a class="phone-pill phone-pill--bar" href="tel:{{phone_href}}">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{phone}}
+      </a>
+      <!-- endif:phone -->
+      <a class="btn btn--primary btn--sm site-header__cta" href="contact.html">Get in touch</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>

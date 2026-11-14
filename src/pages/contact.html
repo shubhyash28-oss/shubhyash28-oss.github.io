@@ -1,0 +1,62 @@
+---
+title: Contact | Global Academic Leaders
+description: Contact Shubh Jain at Global Academic Leaders by email, phone, or LinkedIn about SAT prep, school math, or elementary tutoring.
+page: contact
+section: contact
+---
+<section class="panel panel--mint page-hero" aria-labelledby="page-title">
+  <div class="container">
+    <div class="page-hero__copy">
+      <h1 id="page-title">Let's talk about your student's goals.</h1>
+      <p class="page-hero__lead">Reach out whichever way is easiest. Tell me your student's grade, the subject, and what you'd like to change, and we'll take it from there.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel panel--bare" aria-label="Ways to reach Shubh">
+  <div class="container">
+    <!-- ifnot:any_contact -->
+    <div class="empty-state">
+      <h2>My contact details are on the way.</h2>
+      <p>My email, phone number, and LinkedIn will be listed here very soon. Check back shortly.</p>
+    </div>
+    <!-- endifnot:any_contact -->
+    <!-- if:any_contact -->
+    <div class="contact-cards">
+      <!-- if:email -->
+      <a class="contact-card" href="mailto:{{email}}">
+        <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
+        <span class="contact-card__label">Email</span>
+        <span class="contact-card__value">{{email}}</span>
+        <span class="contact-card__action">Send an email</span>
+      </a>
+      <!-- endif:email -->
+      <!-- if:phone -->
+      <a class="contact-card" href="tel:{{phone_href}}">
+        <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span>
+        <span class="contact-card__label">Phone</span>
+        <span class="contact-card__value">{{phone}}</span>
+        <span class="contact-card__action">Call or text</span>
+      </a>
+      <!-- endif:phone -->
+      <!-- if:linkedin -->
+      <a class="contact-card" href="{{linkedin}}" target="_blank" rel="noopener">
+        <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-linkedin"/></svg></span>
+        <span class="contact-card__label">LinkedIn</span>
+        <span class="contact-card__value">Shubh Jain</span>
+        <span class="contact-card__action">View profile</span>
+      </a>
+      <!-- endif:linkedin -->
+    </div>
+    <!-- endif:any_contact -->
+    <div class="note-card contact-note">
+      <h2 id="include-title">What to include in your message</h2>
+      <ul class="checklist">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Your student's grade and school</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>The subject: SAT prep, school math, or elementary</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>What you'd like to improve, and any test dates</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Days and times that work for sessions</li>
+      </ul>
+    </div>
+  </div>
+</section>
