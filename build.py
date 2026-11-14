@@ -19,9 +19,9 @@ OUT = ROOT / "docs"
 # Contact details shown in the header, footer, contact page and SAT guide form.
 # Leave a value as None until Shubh sends it; the site shows "coming soon" instead.
 SITE = {
-    "email": None,     # e.g. "name@gmail.com"
-    "phone": None,     # e.g. "(410) 555-0123"
-    "linkedin": None,  # full profile URL
+    "email": "shubhyash28@gmail.com",
+    "phone": "(667) 261-1551",
+    "linkedin": "https://www.linkedin.com/in/shubh-jain-3798302a2/",
     "year": "2026",
 }
 
@@ -47,10 +47,15 @@ def conditions():
 
 
 def apply_blocks(html, flags):
-    html = re.sub(r"<!-- if:(\w+) -->\n?(.*?)<!-- endif:\1 -->\n?",
-                  lambda m: m.group(2) if flags[m.group(1)] else "", html, flags=re.S)
-    return re.sub(r"<!-- ifnot:(\w+) -->\n?(.*?)<!-- endifnot:\1 -->\n?",
-                  lambda m: "" if flags[m.group(1)] else m.group(2), html, flags=re.S)
+    # Repeat until nothing changes, so blocks nested inside a kept block are handled too.
+    while True:
+        result = re.sub(r"<!-- if:(\w+) -->\n?(.*?)<!-- endif:\1 -->\n?",
+                        lambda m: m.group(2) if flags[m.group(1)] else "", html, flags=re.S)
+        result = re.sub(r"<!-- ifnot:(\w+) -->\n?(.*?)<!-- endifnot:\1 -->\n?",
+                        lambda m: "" if flags[m.group(1)] else m.group(2), result, flags=re.S)
+        if result == html:
+            return result
+        html = result
 
 
 def fill(template, values, name):
@@ -69,6 +74,9 @@ def main():
     site = {key: value for key, value in SITE.items() if value}
     if SITE["phone"]:
         site["phone_href"] = "+1" + re.sub(r"\D", "", SITE["phone"])[-10:]
+    if SITE["email"]:
+        # Lets a long address wrap after the @ instead of mid-word.
+        site["email_display"] = SITE["email"].replace("@", "@<wbr>")
 
     if OUT.exists():
         shutil.rmtree(OUT)

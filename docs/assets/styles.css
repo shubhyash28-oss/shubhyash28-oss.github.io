@@ -986,7 +986,7 @@ a { color: inherit; }
   font-size: clamp(1.25rem, 1.1rem + .6vw, 1.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 .contact-card__action { color: var(--fern); font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
 @media (min-width: 900px) { .contact-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
