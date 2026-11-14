@@ -3,6 +3,8 @@
 Website for Shubh Jain's tutoring: SAT prep, school math, and elementary tutoring.
 Plain HTML, CSS, and a little JavaScript. No framework, no dependencies.
 
+Live at https://shubhyash28-oss.github.io/
+
 ## Build and preview
 
 ```bash
